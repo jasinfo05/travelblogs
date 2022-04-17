@@ -59,9 +59,18 @@
         }
     
         .gallery{
+            display: block;
+            margin: 12px;
+            width: 20%;
             border: 5px solid rgb(17, 14, 14);
             float: left;
         }
+
+        .gallery img{
+            width: 100%;
+            height: auto;
+        }
+        
         
         .gallery img:hover{
             transform: scale(1,1);
@@ -90,12 +99,14 @@
             <h2 class="blog-gallery">BLOG GALLERY</h2>
         </div>
 
+        {% for data in blogs %}
         <div class="container">
             <div class="gallery">
-                <a href=""><img src="{% static 'assets\img\pictures\img1.jpg' %}" alt=""></a>
-                <div class="place">name</div>
+                <a href="/reader?id={{data.id}}"><img src="{{data.image.url}}" alt=""></a>
+                <div class="place">{{data.name}}</div>
             </div>
         </div>
+        {% endfor %}
 
     </div>
 
