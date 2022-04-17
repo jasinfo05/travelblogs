@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Blog</title>
+    <link rel="stylesheet" href="{% static 'assets\css\style.css' %}">
+
+    <style>
+
+    
+
+        .search-input{
+            width: 300px;
+            height: 25px;
+            background-color: rgba(35, 34, 35, 0.4);
+            overflow: auto;
+            border-radius: 7px;
+            border: 3px solid black;
+            margin-left: 550px;
+            margin-top: 100px;
+            font-style: normal;
+            padding: 5px;
+            padding-bottom: 2px;
+        }
+    
+        .search-button{
+            width: 100px;
+            height: 36px;
+            margin-left: 5px;
+            border-radius: 7px;
+            border: 3px solid black;
+            font-style: normal;
+            padding: 5px;
+            margin-bottom: 1px;
+            background-color: rgba(12, 11, 12, 0.7);
+           
+        }
+    
+        .searchtext{
+            font-style: italic;
+            color: blanchedalmond;
+        }
+    
+        .blog-gallery{
+            color: black;
+            margin-top: 100px;
+            margin-left: 650px;
+            font-family: sans-serif;
+            text-decoration: underline dashed gray;
+        }
+    
+        .container{
+            
+            margin-left: 157px;
+            margin-top: 300px;
+        }
+    
+        .gallery{
+            border: 5px solid rgb(17, 14, 14);
+            float: left;
+        }
+        
+        .gallery img:hover{
+            transform: scale(1,1);
+            transition: .2s transform;
+        }
+    
+    </style>
+
+</head>
+<body>
+    <div class="main">
+        <div class="logo">
+            <h2 class="logo_style">HodoPhile</h2>
+        </div>
+
+        <div class="content">
+            <h2 class="about"> About me</h2>
+            <p class="paragraph">Hey there! I'm Anupama.<br>I'm someone who loves to explore the world & <br>I shared about the memories and experiences during my journeys.<br>Warm welcome everyone to my travel blogs!</p>
+        </div>
+
+        <div class="quote">
+            <h3>"The Real Voyage Of<br> Discovery Consists Not In<br> Seeing New Landscapes,<br>But In Having New Eyes..."</h3>
+        </div>
+
+        <div>
+            <h2 class="blog-gallery">BLOG GALLERY</h2>
+        </div>
+
+        <div class="container">
+            <div class="gallery">
+                <a href=""><img src="{% static 'assets\img\pictures\img1.jpg' %}" alt=""></a>
+                <div class="place">name</div>
+            </div>
+        </div>
+
+    </div>
+
+   
+    
+</body>
+</html>

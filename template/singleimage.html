@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Image</title>
+    <link rel="stylesheet" href="{% static 'assets\css\demo.css' %}">
+    <style>
+        .view_img img{
+            width: 1200px;
+            height: 600px;
+            margin-left: 11%;
+            margin-top: auto;
+            margin-top: 50px;
+       }
+        
+        .comment-title{
+            margin-left: 670px;
+            margin-top: 80px;
+            text-decoration: underline rgba(20, 20, 20, 0.904);
+
+        }
+
+        .comment-box{
+            width:600px;
+            height:400px;
+            background-color :rgba(128, 124, 126, 0.62);
+            overflow: auto;
+            padding: 15px;
+            border: 3px solid black;
+            border-radius: 7px;
+            margin-left: 420px;
+            margin-top: 50px;
+        }
+
+        .add-comment{
+            width: 600px;
+            height: 180px;
+            background-color: whitesmoke;
+            overflow: auto;
+            border: 3px solid black;
+            border-radius: 5px;
+            margin-left: 420px;
+            margin-top: 50px;
+            padding: 15px;
+        }
+
+        .sender-text{
+            width: 150px;
+            height: 25px;
+            background-color: rgba(114, 111, 113, 0.2);
+            overflow: auto;
+            border-radius: 5px;
+            border: 3px solid black;
+            margin-left: 10px;
+            margin-bottom: 70px;
+            font-size: large;
+            font-style: normal;
+            font-weight: 800;
+            color: black;
+        }
+
+        .msg-text{
+            width: 300px;
+            height: 100px;
+            background-color: rgba(114, 111, 113, 0.2);
+            overflow: auto;
+            border-radius: 5px;
+            border: 3px solid black;
+            margin-left: 10px;
+            margin-top: 10px;
+            font-size: large;
+            font-style: normal;
+            font-weight: 800;
+        }
+
+        .add-comment button{
+            width:120px;
+			height:30px;
+			border-radius: 30px;
+			position:relative;
+			bottom:20px;
+			background-color: rgba(114, 111, 113, 0.2);
+			box-shadow:2px 4px #000000;
+			border:None;
+            margin-left: 368px;
+            margin-top: 40px;
+        }
+
+        .back-button{
+            width:80px;
+			height:30px;
+			bottom:20px;
+			background-color: steelblue;
+			border:3px solid rgba(16, 15, 16, 0.6);
+            margin-left: 1200px;
+            margin-top: 30px;
+        }
+
+        .content{
+            margin-top: 50px;
+            font-family: 'Times New Roman';
+            letter-spacing: 0.5px;
+            word-spacing: 3px;
+            line-height: 25px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="singleimg_main">
+        <div class="img_title">
+            <h2>abc</h2>
+            <p>asc</p>
+        </div>
+        <div class="view_img">
+            <img src="">
+        </div>
+        <div class="description">
+            <p class="content"><strong>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp mnkl</strong></p>
+        </div>
+        <div class="comment-title">
+            <h2>COMMENTS</h2>
+        </div>
+
+        <div class="comment-box">
+            <h2>No comments yet...</h2>
+        </div>
+
+        <div class="add-comment">
+                <textarea class="sender-text" name="commenter" placeholder="Name"></textarea>
+                <textarea class="msg-text" name="msg" placeholder="Add a comment..."></textarea>
+                <button class="comment-button" type="submit">Comment</button>
+        </div>
+        <div>
+        
+                <button class="back-button">BACK</button>
+        </div>
+    </div>
+</body>
+</html>
