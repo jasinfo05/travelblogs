@@ -31,18 +31,18 @@
             padding: 15px;
             border: 3px solid black;
             border-radius: 7px;
-            margin-left: 420px;
+            margin-left: 435px;
             margin-top: 50px;
         }
 
         .add-comment{
             width: 600px;
             height: 180px;
-            background-color: whitesmoke;
+            background-color: seashell;
             overflow: auto;
             border: 3px solid black;
             border-radius: 5px;
-            margin-left: 420px;
+            margin-left: 435px;
             margin-top: 50px;
             padding: 15px;
         }
@@ -50,7 +50,7 @@
         .sender-text{
             width: 150px;
             height: 25px;
-            background-color: rgba(114, 111, 113, 0.2);
+            background-color: rgba(128, 124, 126, 0.4);
             overflow: auto;
             border-radius: 5px;
             border: 3px solid black;
@@ -60,12 +60,14 @@
             font-style: normal;
             font-weight: 800;
             color: black;
+            padding: 3px;
+            letter-spacing: 0.5px;
         }
 
         .msg-text{
             width: 300px;
             height: 100px;
-            background-color: rgba(114, 111, 113, 0.2);
+            background-color: rgba(128, 124, 126, 0.4);
             overflow: auto;
             border-radius: 5px;
             border: 3px solid black;
@@ -74,6 +76,8 @@
             font-size: large;
             font-style: normal;
             font-weight: 800;
+            padding: 3px;
+            letter-spacing: 0.5px;
         }
 
         .add-comment button{
@@ -82,7 +86,7 @@
 			border-radius: 30px;
 			position:relative;
 			bottom:20px;
-			background-color: rgba(114, 111, 113, 0.2);
+			background-color: rgba(114, 111, 113, 0.6);
 			box-shadow:2px 4px #000000;
 			border:None;
             margin-left: 368px;
@@ -93,18 +97,32 @@
             width:80px;
 			height:30px;
 			bottom:20px;
-			background-color: steelblue;
+			background-color: rgba(70, 131, 180, 0.897);
 			border:3px solid rgba(16, 15, 16, 0.6);
             margin-left: 1200px;
             margin-top: 30px;
         }
 
         .content{
-            margin-top: 50px;
-            font-family: 'Times New Roman';
+            margin-top: 27px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: medium;
             letter-spacing: 0.5px;
             word-spacing: 3px;
             line-height: 25px;
+            margin-right: 10px;
+        }
+
+        .comment-style{
+            line-height: 32px;
+        }
+
+        .img_title{
+            margin-top: 30px;
+        }
+
+        .sinleimg_main{
+            background-color: rgba(48, 235, 147, 0.78);
         }
 
 
@@ -126,18 +144,30 @@
             <h2>COMMENTS</h2>
         </div>
 
+
         <div class="comment-box">
+        {% if not Blog.comments.all %}
             <h2>No comments yet...</h2>
+        {% else %}
+            {% for cmnt in Blog.comments.all %}
+                <p class="comment-style">{{cmnt.Name}} <strong>  {{cmnt.Message}}  </strong> <small>  {{cmnt.Date}} </small></p>
+            {% endfor %}
+        {% endif %}
         </div>
 
         <div class="add-comment">
+            <form method=POST action="{% url 'details' %}">
+                {% csrf_token %}
                 <textarea class="sender-text" name="commenter" placeholder="Name"></textarea>
                 <textarea class="msg-text" name="msg" placeholder="Add a comment..."></textarea>
+                <input type="hidden" name="Id" value={{Blog.id}}>
                 <button class="comment-button" type="submit">Comment</button>
+            </form>
         </div>
         <div>
-        
+            <form action="{% url 'backpage' %}">
                 <button class="back-button">BACK</button>
+            </form>
         </div>
     </div>
 </body>
